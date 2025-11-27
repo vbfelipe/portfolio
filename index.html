@@ -11,10 +11,8 @@
     <img src="https://flagcdn.com/24x18/br.png" width="20" height="15" alt="Brazil">
     <img src="https://flagcdn.com/24x18/us.png" width="20" height="15" alt="USA">
     
-    <!-- Title -->
     <h1 class="cyber-title"><br>Felipe Vicentini</h1>
 
-    <!-- Intro -->
     <p class="intro">
       Hello! I'm Felipe — a software developer and IT support specialist.<br><br>
       With a strong foundation in both development and IT support, i have a unique blend of skills
@@ -22,7 +20,6 @@
       Contact me now!
     </p>
 
-    <!-- Social Icons -->
     <div class="social-icons">
       <!-- Email -->
       <a href="mailto:felipevicentinibraga@gmail.com" target="_blank" class="icon-button" title="Email">
@@ -65,25 +62,25 @@
       <div class="contact-header">
         <span>Contact Me</span>
         <button id="closeForm" class="close-btn">✕</button>
-    </div>
+      </div>
     
-    <form action="https://formsubmit.co/felipevicentinibraga@gmail.com" method="POST">
-      <label>Name:</label>
-      <input type="text" name="name" placeholder="Your name" required>
-      <label>Your best email:</label>
-      <input type="email" name="email" placeholder="email@example.com" required>
-      <label>Your message:</label>
-      <textarea name="message" placeholder="Write your message..." required></textarea>
-      <button type="submit" class="cta-button small-btn">Send</button>
-      <!-- No Captcha + Correct Redirect -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://vbfelipe.github.io/portfolio/">
-    </form>
+      <form id="messageForm" action="https://formsubmit.co/felipevicentinibraga@gmail.com" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="Your name" required>
+        <label>Your best email:</label>
+        <input type="email" name="email" placeholder="email@example.com" required>
+        <label>Your message:</label>
+        <textarea name="message" placeholder="Write your message..." required></textarea>
+        <button type="submit" class="cta-button small-btn">Send</button>
+
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://vbfelipe.github.io/portfolio/">
+      </form>
     </div>
 
-    <!-- Footer -->
     <footer class="site-footer">
-    © 2025 Felipe Vicentini — Powered by synthwave & caffeine
+      © 2025 Felipe Vicentini — Powered by synthwave & caffeine
     </footer>
 
   </div>
@@ -93,6 +90,7 @@
     const contactBtn = document.getElementById("contactBtn");
     const contactForm = document.getElementById("contactForm");
     const closeForm = document.getElementById("closeForm");
+    const messageForm = document.getElementById("messageForm");
 
     contactBtn.addEventListener("click", () => {
       contactBtn.style.display = "none";
@@ -102,6 +100,13 @@
     closeForm.addEventListener("click", () => {
       contactForm.style.display = "none";
       contactBtn.style.display = "inline-block";
+    });
+
+    /* 🔥 Forced redirect fix after submit */
+    messageForm.addEventListener("submit", () => {
+      setTimeout(() => {
+        window.location.href = "https://vbfelipe.github.io/portfolio/";
+      }, 1500);
     });
   </script>
 </body>
