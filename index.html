@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Felipe Vicentini – Software Development and IT Support</title>
+  <title>Felipe Vicentini</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -75,6 +75,9 @@
       <label>Your message:</label>
       <textarea name="message" placeholder="Write your message..." required></textarea>
       <button type="submit" class="cta-button small-btn">Send</button>
+      <!-- No Captcha + Correct Redirect -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://vbfelipe.github.io/portfolio/">
     </form>
     </div>
 
