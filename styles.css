@@ -8,31 +8,18 @@
 }
 
 /* ===========================================================
-   CYBERPUNK BACKGROUND
+   BACKGROUND – Cyberpunk CRT
 =========================================================== */
 body {
   font-family: Arial, sans-serif;
   background: #0a0c14;
 
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(255, 0, 200, 0.15) 0%, transparent 55%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(0, 255, 255, 0.04) 0px,
-      rgba(0, 255, 255, 0.04) 2px,
-      transparent 2px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 0, 200, 0.04) 0px,
-      rgba(255, 0, 200, 0.04) 2px,
-      transparent 2px,
-      transparent 60px
-    );
+    radial-gradient(circle at 20% 30%, rgba(0,255,255,0.12), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255,0,200,0.15), transparent 55%),
+    repeating-linear-gradient(90deg, rgba(0,255,255,0.04) 0px, rgba(0,255,255,0.04) 2px, transparent 2px, transparent 60px),
+    repeating-linear-gradient(0deg, rgba(255,0,200,0.04) 0px, rgba(255,0,200,0.04) 2px, transparent 2px, transparent 60px);
 
-  background-size: cover;
   animation: bgMove 12s linear infinite;
 
   display: flex;
@@ -40,7 +27,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  color: #ffffff;
+  color: #fff;
 }
 
 @keyframes bgMove {
@@ -54,58 +41,60 @@ body {
 }
 
 /* ===========================================================
-   TITLES (GLITCH)
+   CYBERPUNK CRT TITLE
 =========================================================== */
-h1 {
-  margin-top: 60px;
-  margin-bottom: 20px;
-  font-size: 32px;
+.cyber-title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+
   color: #00ffff;
+  text-shadow:
+      0 0 8px #00ffff,
+      0 0 14px #00eeff,
+      0 0 22px #cc00ff80,
+      2px 0px 2px #00ffff,
+     -2px 0px 2px #cc00ff;
+
+  /* Flicker + CRT distort blend */
+  animation:
+    titleFlicker 2.8s infinite,
+    titleGlitch 4s infinite,
+    fadeIn 0.8s ease forwards; 
   opacity: 0;
-  position: relative;
-
-  animation: 
-    fadeIn 0.8s ease forwards 0.2s,
-    glitch 3s infinite;
-  text-shadow: 0 0 8px #00ffff;
 }
 
-h1::before,
-h1::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  width: 100%;
-  color: #00ffff;
-  background: transparent;
+/* Glitch colored shadow offsets */
+@keyframes titleGlitch {
+  0%   { text-shadow: 2px 0 #00ffff, -2px 0 #cc00ff; }
+  20%  { text-shadow: -2px 0 #00ffff, 2px 0 #cc00ff; }
+  40%  { text-shadow: 3px 0 #00ffff, -3px 0 #cc00ff; }
+  60%  { text-shadow: -3px 0 #00ffff, 3px 0 #cc00ff; }
+  80%  { text-shadow: 1px 0 #00ffff, -1px 0 #cc00ff; }
+  100% { text-shadow: 2px 0 #00ffff, -2px 0 #cc00ff; }
 }
 
-h1::before {
-  text-shadow: -3px 0 magenta;
-  animation: glitchTop 2.5s infinite ease-in-out;
+/* CRT flicker effect */
+@keyframes titleFlicker {
+  0%   { opacity: 1; }
+  5%   { opacity: 0.6; }
+  6%   { opacity: 1; }
+  10%  { opacity: 0.5; }
+  11%  { opacity: 1; }
+  30%  { opacity: 0.95; }
+  31%  { opacity: 0.8; }
+  32%  { opacity: 1; }
+  70%  { opacity: 0.9; }
+  71%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 
-h1::after {
-  text-shadow: 3px 0 cyan;
-  animation: glitchBottom 3s infinite ease-in-out;
-}
-
-@keyframes glitchTop {
-  0% { clip-path: inset(0 0 90% 0); transform: translate(0,0); }
-  20% { clip-path: inset(0 0 40% 0); transform: translate(-3px,-2px); }
-  40% { clip-path: inset(0 0 70% 0); transform: translate(3px,2px); }
-  60% { clip-path: inset(0 0 20% 0); transform: translate(-1px,1px); }
-  80% { clip-path: inset(0 0 60% 0); transform: translate(1px,-1px); }
-  100% { clip-path: inset(0 0 90% 0); transform: translate(0,0); }
-}
-
-@keyframes glitchBottom {
-  0% { clip-path: inset(80% 0 0 0); transform: translate(0,0); }
-  20% { clip-path: inset(30% 0 0 0); transform: translate(3px,2px); }
-  40% { clip-path: inset(60% 0 0 0); transform: translate(-3px,-2px); }
-  60% { clip-path: inset(20% 0 0 0); transform: translate(1px,-1px); }
-  80% { clip-path: inset(50% 0 0 0); transform: translate(-1px,1px); }
-  100% { clip-path: inset(80% 0 0 0); transform: translate(0,0); }
+@media (max-width: 600px) {
+  .cyber-title {
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
 }
 
 /* ===========================================================
@@ -135,18 +124,9 @@ h1::after {
 .icon-button {
   width: 48px;
   height: 48px;
-  color: #00ffff;
   cursor: pointer;
-  display: inline-block;
   transition: filter 0.3s;
-
-  /* continuous floating for icons */
   animation: cyberFloat 4.8s ease-in-out infinite;
-}
-
-.icon-button svg {
-  width: 100%;
-  height: 100%;
 }
 
 .icon-button:hover {
@@ -154,7 +134,7 @@ h1::after {
 }
 
 /* ===========================================================
-   CTA BUTTON + ALL BUTTONS FLOATING
+   CTA BUTTON
 =========================================================== */
 .cta-button {
   display: inline-block;
@@ -162,43 +142,130 @@ h1::after {
   background: transparent;
   color: #00FFFF;
   text-decoration: none;
-
   border: 2px solid #00FFFF;
   border-radius: 8px;
-
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   opacity: 0;
-
-  position: relative;
   transition: all 0.3s ease;
 
-  /* CTA fades + pulses + floats */
-  animation: 
-    fadeIn 0.8s ease forwards 1.1s,
-    neonPulse 2.5s ease-in-out infinite,
-    cyberFloat 5s ease-in-out infinite,
-    glitchButton 3s infinite;
+  animation:
+    fadeIn 0.8s ease forwards 1.1s,   /* fade & slide */
+    neonPulse 2.5s ease-in-out infinite 1.9s,  
+    cyberFloat 5s ease-in-out infinite 1.9s,
+    glitchButton 3s infinite 1.9s;
 }
 
 .cta-button:hover {
-  background: #00FFFF10;
+  background: #00ffff15;
   box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF60;
   transform: scale(1.08);
 }
 
-/* Button glitch overlay */
-.cta-button::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: inherit;
+/* ===========================================================
+   CONTACT WINDOW
+=========================================================== */
+.contact-window {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  width: 350px;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+  border: 2px solid #00FFFF;
+  border-radius: 8px;
+  background: #00ffff0a;
+  box-shadow: 0 0 20px #00FFFF40;
+  animation:
+    neonPulse 2.5s ease-in-out infinite,
+    cyberFloat 5s ease-in-out infinite,
+    fadeIn 0.4s ease forwards;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #00FFFF;
-  opacity: 0.45;
-  clip-path: inset(0 0 50% 0);
-  animation: glitchButton 2.5s infinite ease-in-out;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #00FFFF;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-btn:hover {
+  filter: drop-shadow(0 0 8px #00ffff);
+}
+
+/* Inputs */
+.contact-window input,
+.contact-window textarea {
+  width: 100%;
+  padding: 10px;
+  background: #00000040;
+  border: 1px solid #00FFFF60;
+  border-radius: 6px;
+  color: #00FFFF;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+
+.contact-window input:focus,
+.contact-window textarea:focus {
+  border-color: #00FFFF;
+  box-shadow: 0 0 10px #00FFFF80;
+}
+
+.small-btn {
+  margin-top: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* Contact Form Text Styling */
+.contact-window label {
+  color: #00ffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-shadow: 0 0 6px #00ffff50;
+  letter-spacing: 1px;
+  margin-top: 12px; /* ← Add spacing ABOVE each label */
+  display: block;   /* ensures consistent spacing */
+}
+
+.contact-window input,
+.contact-window textarea {
+  font-family: inherit; /* same font as rest of page */
+  color: #00ffff;     /* matches the neon palette */
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: #00000060;
+  border: 1px solid #00ffff80;
+  border-radius: 6px;
+  padding: 10px;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 0 4px #00ffff30 inset;
+}
+
+.contact-window input::placeholder,
+.contact-window textarea::placeholder {
+  color: #00ffff80;
+  text-shadow: 0 0 4px #00ffff40;
+}
+
+.contact-window input:focus,
+.contact-window textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 12px #00ffff90;
 }
 
 /* ===========================================================
@@ -216,11 +283,8 @@ h1::after {
 }
 
 @keyframes glitchButton {
-  0% { transform: translate(0,0); opacity: .3; }
-  20% { transform: translate(-3px,2px); opacity: .6; }
-  40% { transform: translate(3px,-2px); opacity: .4; }
-  60% { transform: translate(-1px,1px); opacity: .7; }
-  80% { transform: translate(1px,-1px); opacity: .5; }
+  0%   { transform: translate(0,0); opacity: .3; }
+  50%  { transform: translate(-3px,2px); opacity: .6; }
   100% { transform: translate(0,0); opacity: .3; }
 }
 
@@ -229,12 +293,24 @@ h1::after {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+.site-footer {
+  margin-top: 60px;
+  text-align: center;
+  color: #00ffffb0;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px #00ffff50;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 1.4s;
+}
+
 /* ===========================================================
    RESPONSIVE
 =========================================================== */
 @media (max-width: 600px) {
-  h1 { font-size: 26px; margin-top: 40px; }
-  .intro { font-size: 16px; margin-bottom: 30px; }
+  h1 { font-size: 32px; }
+  .intro { font-size: 16px; }
   .icon-button { width: 40px; height: 40px; }
   .cta-button { font-size: 14px; padding: 12px 24px; }
+  .contact-window { width: 90%; }
 }
