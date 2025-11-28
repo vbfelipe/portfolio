@@ -19,3 +19,10 @@
         window.location.href = "https://vbfelipe.github.io/portfolio/";
       }, 1500);
     });
+
+    // Preloader hide after page fully loads
+    window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.animation = "preloaderFadeOut 0.5s ease 0.5s forwards";
+
+  });
