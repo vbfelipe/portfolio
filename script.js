@@ -1,4 +1,3 @@
-
     const contactBtn = document.getElementById("contactBtn");
     const contactForm = document.getElementById("contactForm");
     const closeForm = document.getElementById("closeForm");

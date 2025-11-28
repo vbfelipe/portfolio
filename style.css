@@ -40,6 +40,15 @@ body {
   max-width: 800px;
 }
 
+.profile-pic {
+  width: 110px;       
+  height: 110px;      
+  border-radius: 50%; 
+  object-fit: cover;
+  border: 1.5px solid #00eaff; /* neon cyan */
+  box-shadow: 0 0 7px #00eaff, 0 0 15px #8a2be2; /* dual glow */  
+}
+
 /* ===========================================================
    CYBERPUNK CRT TITLE
 =========================================================== */
