@@ -4,9 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google" content="notranslate">
-  <title translate="no">Felipe Vicentini</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="google" content="notranslate" />
+  <meta name="description"
+    content="Felipe Vicentini — Software Developer & IT Support Specialist. Interactive 3D WebGL, JavaScript, Front-End & Python Automation Portfolio." />
+  <title translate="no">Felipe Vicentini — Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Google Fonts: Orbitron (Cyber Display) & Plus Jakarta Sans (Clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -15,109 +25,194 @@
   <!-- PRELOADER -->
   <div id="preloader">
     <div class="loader-bar"></div>
-    <span class="loader-text">LOADING...</span>
+    <span class="loader-text" data-i18n="loading">LOADING...</span>
   </div>
 
-  <div class="container">
-    <img src="profilepic.jpeg" class="profile-pic" alt="My photo"><br><br>
+  <main class="container">
+    <!-- HERO / BIO -->
+    <header class="hero-section">
+      <picture>
+        <source srcset="profilepic.webp" type="image/webp" />
+        <img src="profilepic.jpeg" class="profile-pic" width="110" height="110" alt="Felipe Vicentini" />
+      </picture>
 
-    <img src="https://flagcdn.com/24x18/br.png" width="20" height="15" alt="Brazil">
-    <img src="https://flagcdn.com/24x18/us.png" width="20" height="15" alt="USA">
-
-    <h1 class="cyber-title" translate="no">Felipe Vicentini</h1>
-
-    <p class="intro">
-      Hello! I'm Felipe — a software developer and IT support specialist.<br><br>
-      I build efficient solutions by uniting software development
-      expertise with hands-on infrastructure and support experience.<br><br>
-      Contact me now!
-    </p>
-
-    <div class="social-icons">
-      <!-- Email -->
-      <a href="mailto:felipevicentinibraga@gmail.com" target="_blank" class="icon-button" title="Email">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-          <path d="M6.11098 18.9943H4.78839C4.19226 19.0474 3 18.7528 3 17.1491C3
-           15.5454 3 9.96574 3 7.74088C3 5.51602 5.29936 5.75901 6.46066 6.62465L11.9883
-            10.6567L17.6323 6.48797C18.9793 5.41731 21 6.16905 21 8.44707C21 11.8185
-            21 15.395 21 16.7618C21 17.6502 20.7631 18.9943 18.9793 18.9943H16.889V12.2058L11.9883
-            15.8506L7.11098 12.2058V16.7186" stroke="#00FFFF" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/55021967834070" target="_blank" class="icon-button" title="WhatsApp">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-          <path d="M4.75185 6.52361C3.68367 7.53066 2.06003 10.8623 4.11094 16.1326L3
-           21L7.27274 19.4894C10.1782 20.7482 16.1173 21.4616 19.4928 16.4263C22.6538
-            11.7108 20.3155 6.90123 17.3137 4.67733C15.2537 3.15123 11.5198 1.94151
-            6.80273 4.42557C6.34698 6.46765 6.2131 11.0637 9.49456 13.9506C13.5964
-            17.5592 16.8437 15.7969 17.5273 14.5381L14.7073 12.9016L13.2973
-            14.1604C12.2576 13.7968 10.0415 12.6498 9.49456 10.9714L10.4346
-            9.7126L9.23819 6.90124C8.9391 6.98516 8.2341 7.26629 7.80683 7.71947" stroke="#00FFFF"
-            stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/felipevicentini4070" target="_blank" class="icon-button" title="LinkedIn">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-          <path d="M3.50143 6.90595C2.37528 5.7193 3.24155 3.95978 5.14733 4.0007C7.05312
-           4.04162 7.61619 6.12849 6.83655 7.68341C6.21284 8.92734 4.35326 9.34744
-            3.50143 9.402V20H9.17547V8.95189H12.9004V10.7523C15.4993 7.68341 21
-            8.62454 21 13.0029V20H17.1019V14.5169C17.1019 12.0208 15.9757 11.5093
-            14.698 12.0208C13.4202 12.5323 12.9004 13.453 12.9004 15.3352C12.9004
-            17.5612 12.9004 19.3726 12.9004 20" stroke="#00FFFF" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </a>
-
-      <!-- GitHub -->
-      <a href="https://github.com/vbfelipe" target="_blank" class="icon-button" title="GitHub">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-          <path d="M11.7444 14C5.13962 13 5.64768 8.5 7.67987 7C7.27882 6.39155
-           6.66375 4 7.1718 3.00001C8.18792 3.5 9.55173 4.23944 10.2202 5C12.2524
-            4 15.3007 4 16.8249 5C17.226 4.18873 18.6968 3.42254 19.3652 3C19.9668
-            3.60845 19.5323 5.98592 19.3652 7C20.3678 9.19718 20.8894 12.5 15.3007
-            14C16.1273 14.6688 17.4571 16.2652 18.3819 18.0893C19.0373 19.3821
-            17.7844 20.5701 16.3571 20.3176C15.3606 20.1413 14.2545 20 13.2685
-            20C12.0745 20 10.494 20.2071 9.12617 20.4329C7.71155 20.6663
-            6.56735 19.4472 7.29296 18.2106C7.81974 17.3128 8.48393 16.4725
-            9.20408 16C8.95342 15.662 7.9605 14.6887 6.15574 15.5C3.89979
-            16.5141 2.60607 14.2676 3.10739 13" stroke="#00FFFF" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </a>
-    </div>
-
-    <!-- Contact Button -->
-    <a href="#" id="contactBtn" class="cta-button">Contact</a>
-
-    <!-- Contact Form -->
-    <div id="contactForm" class="contact-window">
-      <div class="contact-header">
-        <span>Contact Me</span>
-        <button id="closeForm" class="close-btn">✕</button>
+      <!-- Interactive Language Switcher (EN / PT-BR) -->
+      <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn active" data-lang="en" title="English (US)" aria-pressed="true">
+          <img src="https://flagcdn.com/24x18/us.png" width="20" height="15" alt="USA" />
+          <span>EN</span>
+        </button>
+        <button type="button" class="lang-btn" data-lang="pt" title="Português (Brasil)" aria-pressed="false">
+          <img src="https://flagcdn.com/24x18/br.png" width="20" height="15" alt="Brazil" />
+          <span>PT</span>
+        </button>
       </div>
 
-      <form id="messageForm" action="https://formsubmit.co/felipevicentinibraga@gmail.com" method="POST">
-        <label>Name:</label>
-        <input type="text" name="name" placeholder="Your name" required>
-        <label>Your best email:</label>
-        <input type="email" name="email" placeholder="email@example.com" required>
-        <label>Your message:</label>
-        <textarea name="message" placeholder="Write your message..." required></textarea>
-        <button type="submit" class="cta-button small-btn">Send</button>
+      <h1 class="cyber-title" translate="no">Felipe Vicentini</h1>
 
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://vbfelipe.github.io/portfolio/">
-      </form>
-    </div>
+      <p class="intro" data-i18n-html="intro">
+        Hello! I'm Felipe — a software developer and IT support specialist.<br><br>
+        I build efficient solutions by uniting software development
+        expertise with hands-on infrastructure and support experience.
+      </p>
 
-    <footer class="site-footer">
-      © 2025 Felipe Vicentini — Powered by synthwave & caffeine
+      <!-- Core Tech & Infra Stack Strip -->
+      <ul class="tech-strip" aria-label="Core technologies">
+        <li>JavaScript ES6+</li>
+        <li>Three.js / WebGL</li>
+        <li>HTML5 &amp; CSS3</li>
+        <li>Vite &amp; Git</li>
+        <li>Python</li>
+        <li data-i18n="skillInfra">IT Support &amp; Infra</li>
+      </ul>
+    </header>
+
+    <!-- =========================================================
+         PORTFOLIO SHOWCASE — PEEK / COVERFLOW CAROUSEL
+    ========================================================== -->
+    <section class="portfolio-section" aria-labelledby="projectsHeading">
+      <div class="section-header">
+        <span class="section-eyebrow" data-i18n="showcaseEyebrow">SELECTED WORK &amp; LIVE DEMOS</span>
+        <h2 id="projectsHeading" class="section-title" data-i18n="showcaseTitle">Projects in Action</h2>
+      </div>
+
+      <!-- Quick-Jump Project Pills -->
+      <div id="carouselPills" class="carousel-pills" role="tablist" aria-label="Select project"></div>
+
+      <!-- Peek Stage -->
+      <div class="peek-carousel-wrapper">
+        <button type="button" id="prevSlideBtn" class="carousel-nav prev" aria-label="Previous project">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div id="peekTrack" class="peek-stage" aria-live="polite">
+          <!-- Slides injected dynamically by script.js -->
+        </div>
+
+        <button type="button" id="nextSlideBtn" class="carousel-nav next" aria-label="Next project">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="carousel-hint" data-i18n="carouselHint">
+        Swipe or use the arrows to explore — click any screenshot to zoom.
+      </p>
+    </section>
+
+    <!-- CONTACT CTA & FORM -->
+    <section class="contact-section">
+      <p class="contact-prompt" data-i18n="contactPrompt">Interested in working together? Reach out!</p>
+
+      <!-- SOCIAL ICONS -->
+      <div class="social-icons">
+        <!-- Email -->
+        <a href="mailto:felipevicentinibraga@gmail.com" target="_blank" rel="noopener" class="icon-button" title="Email"
+          aria-label="Email">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+            <path d="M6.11098 18.9943H4.78839C4.19226 19.0474 3 18.7528 3 17.1491C3
+             15.5454 3 9.96574 3 7.74088C3 5.51602 5.29936 5.75901 6.46066 6.62465L11.9883
+              10.6567L17.6323 6.48797C18.9793 5.41731 21 6.16905 21 8.44707C21 11.8185
+              21 15.395 21 16.7618C21 17.6502 20.7631 18.9943 18.9793 18.9943H16.889V12.2058L11.9883
+              15.8506L7.11098 12.2058V16.7186" stroke="#00FFFF" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/55021967834070" target="_blank" rel="noopener" class="icon-button" title="WhatsApp"
+          aria-label="WhatsApp">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+            <path d="M4.75185 6.52361C3.68367 7.53066 2.06003 10.8623 4.11094 16.1326L3
+             21L7.27274 19.4894C10.1782 20.7482 16.1173 21.4616 19.4928 16.4263C22.6538
+              11.7108 20.3155 6.90123 17.3137 4.67733C15.2537 3.15123 11.5198 1.94151
+              6.80273 4.42557C6.34698 6.46765 6.2131 11.0637 9.49456 13.9506C13.5964
+              17.5592 16.8437 15.7969 17.5273 14.5381L14.7073 12.9016L13.2973
+              14.1604C12.2576 13.7968 10.0415 12.6498 9.49456 10.9714L10.4346
+              9.7126L9.23819 6.90124C8.9391 6.98516 8.2341 7.26629 7.80683 7.71947" stroke="#00FFFF" stroke-width="1.4"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/felipevicentini4070" target="_blank" rel="noopener" class="icon-button"
+          title="LinkedIn" aria-label="LinkedIn">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+            <path d="M3.50143 6.90595C2.37528 5.7193 3.24155 3.95978 5.14733 4.0007C7.05312
+             4.04162 7.61619 6.12849 6.83655 7.68341C6.21284 8.92734 4.35326 9.34744
+              3.50143 9.402V20H9.17547V8.95189H12.9004V10.7523C15.4993 7.68341 21
+              8.62454 21 13.0029V20H17.1019V14.5169C17.1019 12.0208 15.9757 11.5093
+              14.698 12.0208C13.4202 12.5323 12.9004 13.453 12.9004 15.3352C12.9004
+              17.5612 12.9004 19.3726 12.9004 20" stroke="#00FFFF" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/vbfelipe" target="_blank" rel="noopener" class="icon-button" title="GitHub"
+          aria-label="GitHub">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+            <path d="M11.7444 14C5.13962 13 5.64768 8.5 7.67987 7C7.27882 6.39155
+             6.66375 4 7.1718 3.00001C8.18792 3.5 9.55173 4.23944 10.2202 5C12.2524
+              4 15.3007 4 16.8249 5C17.226 4.18873 18.6968 3.42254 19.3652 3C19.9668
+              3.60845 19.5323 5.98592 19.3652 7C20.3678 9.19718 20.8894 12.5 15.3007
+              14C16.1273 14.6688 17.4571 16.2652 18.3819 18.0893C19.0373 19.3821
+              17.7844 20.5701 16.3571 20.3176C15.3606 20.1413 14.2545 20 13.2685
+              20C12.0745 20 10.494 20.2071 9.12617 20.4329C7.71155 20.6663
+              6.56735 19.4472 7.29296 18.2106C7.81974 17.3128 8.48393 16.4725
+              9.20408 16C8.95342 15.662 7.9605 14.6887 6.15574 15.5C3.89979
+              16.5141 2.60607 14.2676 3.10739 13" stroke="#00FFFF" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+      <a href="#contactForm" id="contactBtn" class="cta-button" data-i18n="contactBtn">Contact</a>
+
+      <div id="contactForm" class="contact-window">
+        <div class="contact-header">
+          <span data-i18n="contactTitle">Contact Me</span>
+          <button type="button" id="closeForm" class="close-btn" aria-label="Close contact form">✕</button>
+        </div>
+
+        <form id="messageForm" action="https://formsubmit.co/felipevicentinibraga@gmail.com" method="POST">
+          <label for="inputName" data-i18n="labelName">Name:</label>
+          <input id="inputName" type="text" name="name" data-i18n-placeholder="phName" placeholder="Your name"
+            required />
+
+          <label for="inputEmail" data-i18n="labelEmail">Your best email:</label>
+          <input id="inputEmail" type="email" name="email" data-i18n-placeholder="phEmail"
+            placeholder="email@example.com" required />
+
+          <label for="inputMsg" data-i18n="labelMsg">Your message:</label>
+          <textarea id="inputMsg" name="message" rows="4" data-i18n-placeholder="phMsg"
+            placeholder="Write your message..." required></textarea>
+
+          <button type="submit" class="cta-button small-btn" data-i18n="sendBtn">Send</button>
+
+          <!-- FormSubmit settings -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://vbfelipe.github.io/portfolio/" />
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer" data-i18n="footer">
+      © 2026 Felipe Vicentini — Powered by synthwave &amp; caffeine
     </footer>
+  </main>
 
+  <!-- FULLSCREEN IMAGE LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image preview">
+    <button type="button" id="lightboxClose" class="lightbox-close" aria-label="Close preview">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+    <span id="lightboxCaption" class="lightbox-caption"></span>
   </div>
+
   <script src="script.js"></script>
 </body>
 
