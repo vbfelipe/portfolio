@@ -5,9 +5,9 @@ const I18N = {
   en: {
     loading: "LOADING...",
     intro:
-      "Hello! I'm Felipe — a software developer and IT support specialist.<br><br>" +
-      "I build efficient solutions by uniting software development expertise with hands-on infrastructure and support experience.",
-    skillInfra: "IT Support & Infra",
+      "Hello! I'm Felipe — a software developer focused on building fast, interactive web applications and practical automation tools.<br><br>" +
+      "From 3D browser experiences to clean, responsive interfaces, I write code that turns ideas into reliable software.",
+    skillInfra: "IT Infrastructure",
     showcaseEyebrow: "SELECTED WORK & LIVE DEMOS",
     showcaseTitle: "Projects in Action",
     carouselHint:
@@ -23,7 +23,7 @@ const I18N = {
     phMsg: "Write your message...",
     sendBtn: "Send",
     footer: "© 2026 Felipe Vicentini — Powered by synthwave & caffeine",
-    videoTab: "Gameplay",
+    videoTab: "Demo",
     shotTab: "Shot",
     liveBadge: "GAMEPLAY LOOP",
     shotBadge: "SCREENSHOT",
@@ -34,9 +34,9 @@ const I18N = {
   pt: {
     loading: "CARREGANDO...",
     intro:
-      "Olá! Eu sou o Felipe — desenvolvedor de software e especialista em suporte de TI.<br><br>" +
-      "Construo soluções eficientes unindo desenvolvimento de software com experiência prática em infraestrutura e suporte.",
-    skillInfra: "Suporte de TI & Infra",
+      "Olá! Eu sou o Felipe — desenvolvedor de software focado em criar aplicações web rápidas, interativas e ferramentas práticas de automação.<br><br>" +
+      "De experiências 3D no navegador a interfaces limpas e responsivas, transformo ideias em software confiável.",
+    skillInfra: "Infraestrutura de TI",
     showcaseEyebrow: "PROJETOS EM DESTAQUE & DEMOS AO VIVO",
     showcaseTitle: "Projetos em Ação",
     carouselHint:
@@ -52,7 +52,7 @@ const I18N = {
     phMsg: "Escreva sua mensagem...",
     sendBtn: "Enviar",
     footer: "© 2026 Felipe Vicentini — Movido a synthwave & cafeína",
-    videoTab: "Gameplay",
+    videoTab: "Demo",
     shotTab: "Tela",
     liveBadge: "GAMEPLAY LOOP",
     shotBadge: "CAPTURA",
@@ -70,12 +70,12 @@ const PROJECTS = [
     id: "roc-and-load",
     shortLabel: "Roc & Load",
     title: "Roc and Load!",
-    category: { en: "3D WebGL Game", pt: "Jogo 3D WebGL" },
+    category: { en: "3D FPS · Custom Engine", pt: "FPS 3D · Engine Própria" },
     description: {
-      en: "First-person 3D arcade shooter running natively in the browser. Engineered with BVH spatial mesh acceleration for fast raycasting/collision, custom WebGL post-processing, and Vite CI/CD.",
-      pt: "Shooter arcade 3D em primeira pessoa direto no navegador. Desenvolvido com aceleração espacial BVH para raycasting e colisão rápidos, pós-processamento WebGL e deploy via Vite.",
+      en: "Modular first-person 3D shooter built on a custom browser engine — featuring zombie wave AI, object pooling, BVH collision, spring-physics weapon viewmodels, an in-game gun shop economy, and built-in dev tools.",
+      pt: "FPS 3D modular construído sobre uma engine própria no navegador — com IA de ondas de inimigos, object pooling, colisão BVH, física de armas em primeira pessoa, loja/economia in-game e painel de dev tools.",
     },
-    tags: ["Three.js", "BVH Raycasting", "Post-Processing", "Tween.js", "Vite"],
+    tags: ["JavaScript", "Three.js", "three-mesh-bvh", "Tween.js", "Vite", "Postprocessing"],
     media: [
       {
         type: "video",
@@ -104,12 +104,12 @@ const PROJECTS = [
     id: "cala-a-boca-cruzado",
     shortLabel: "Cala a Boca!",
     title: "Cala a Boca, Cruzado!",
-    category: { en: "3D Arcade & Web Audio", pt: "Arcade 3D & Web Audio" },
+    category: { en: "3D Arcade Mini-Game", pt: "Mini-Game Arcade 3D" },
     description: {
-      en: "High-tempo 3D whack-a-mole arcade cabinet featuring a custom procedural Web Audio synthesizer with lookahead scheduling, combo/fury state machine, and responsive touch/mouse input.",
-      pt: "Fliperama 3D estilo whack-a-mole com sintetizador de áudio procedural via Web Audio API, máquina de estados de combo/fúria e suporte responsivo a mouse e toque.",
+      en: "High-tempo 3D 'whack-a-mole' arcade cabinet featuring a custom procedural Web Audio synthesizer with lookahead scheduling, combo/fury state machine, and responsive touch/mouse input.",
+      pt: "Fliperama 3D estilo 'jogo da toupeira' com sintetizador de áudio procedural via Web Audio API, máquina de estados de combo/fúria e suporte responsivo a mouse e toque.",
     },
-    tags: ["Three.js", "Web Audio Synth", "Tween.js", "JavaScript ES6+", "Mobile Touch"],
+    tags: ["JavaScript", "Three.js", "Tween.js", "Web Audio API"],
     media: [
       {
         type: "video",
@@ -138,12 +138,12 @@ const PROJECTS = [
     id: "cybercity-signal-hunt",
     shortLabel: "Cybercity",
     title: "Cybercity Signal Hunt",
-    category: { en: "HTML5 Canvas Game", pt: "Jogo HTML5 Canvas" },
+    category: { en: "2D Reflex Mini-Game", pt: "Mini-Game de Reflexo 2D" },
     description: {
       en: "Cyberpunk reflex mini-game built on dual HTML5 Canvas layers—combining a real-time Matrix digital rain background, DPI-aware particle explosions, pause state control, and 4 difficulty modes.",
       pt: "Mini-game cyberpunk de reflexo em camadas duplas de HTML5 Canvas, com chuva Matrix em tempo real, explosões de partículas High-DPI, sistema de pausa e 4 dificuldades.",
     },
-    tags: ["HTML5 Canvas", "JavaScript", "Particle FX", "High-DPI", "CSS3"],
+    tags: ["JavaScript", "Canvas API", "HTML", "CSS"],
     media: [
       {
         type: "video",
@@ -172,13 +172,19 @@ const PROJECTS = [
     id: "fantasy-name-generator",
     shortLabel: "Fantasy Gen",
     title: "Fantasy Name Generator",
-    category: { en: "Interactive Web App", pt: "Web App Interativo" },
+    category: { en: "Procedural Web Tool", pt: "Ferramenta Procedural" },
     description: {
       en: "Procedural character name generator powered by a curated 1,000+ syllable pool across distinct realms (Human, Elven, Dark, Random), paired with dynamic theme state and glassmorphic UI.",
       pt: "Gerador procedural de nomes de fantasia com +1.000 sílabas divididas por reinos (Humano, Élfico, Sombrio e Aleatório), troca dinâmica de temas e interface glassmorphism.",
     },
-    tags: ["Vanilla JS", "Procedural Logic", "DOM State", "WebP", "Glassmorphism"],
+    tags: ["JavaScript", "HTML", "CSS"],
     media: [
+      {
+        type: "video",
+        mp4: "projectsMedia/fantasy-video.mp4",
+        poster: "projectsMedia/fantasy-print1.webp",
+        fitCover: true,
+      },
       { type: "image", src: "projectsMedia/fantasy-print1.webp", alt: "Fantasy Name Generator Human Realm", fitCover: true },
       { type: "image", src: "projectsMedia/fantasy-print2.webp", alt: "Fantasy Name Generator Elven Realm", fitCover: true },
       { type: "image", src: "projectsMedia/fantasy-print3.webp", alt: "Fantasy Name Generator Dark Realm", fitCover: true },
@@ -201,12 +207,12 @@ const PROJECTS = [
     id: "jornada-viagens",
     shortLabel: "Jornada Viagens",
     title: "Jornada Viagens",
-    category: { en: "Responsive Front-End", pt: "Front-End Responsivo" },
+    category: { en: "Multi-Page Website", pt: "Site Multi-Página" },
     description: {
       en: "Multi-page travel agency front-end demonstrating clean semantic HTML5 markup, responsive Flexbox & CSS Grid layouts, destination package cards, testimonials, and mobile-first craft.",
       pt: "Front-end multi-página de agência de viagens com HTML5 semântico, layouts responsivos em Flexbox e Grid, vitrine de pacotes turísticos, depoimentos e abordagem mobile-first.",
     },
-    tags: ["Semantic HTML5", "Modern CSS3", "Flexbox & Grid", "Responsive UI", "Multi-Page"],
+    tags: ["HTML", "CSS", "Flexbox", "CSS Grid"],
     media: [
       { type: "image", src: "projectsMedia/jornada-viagens-print1.webp", alt: "Jornada Viagens hero header" },
       { type: "image", src: "projectsMedia/jornada-viagens-print2.webp", alt: "Jornada Viagens popular offers" },
@@ -226,12 +232,12 @@ const PROJECTS = [
     id: "python-automation",
     shortLabel: "Python Tools",
     title: "Python IT Automation",
-    category: { en: "Python & IT Tooling", pt: "Automação Python & TI" },
+    category: { en: "Python Automation Scripts", pt: "Scripts de Automação" },
     description: {
       en: "Practical Python tools uniting coding with everyday IT support workflows: a desktop Tkinter + PyPDF2 GUI for instant PDF text extraction, and an automated Microsoft 365 STARTTLS email dispatcher.",
       pt: "Utilitários em Python aplicados a rotinas de TI: extrator desktop de texto em PDF com interface Tkinter + PyPDF2 e disparador automatizado de e-mails via SMTP/TLS (Office 365).",
     },
-    tags: ["Python 3", "Tkinter GUI", "PyPDF2", "smtplib / TLS 587", "IT Automation"],
+    tags: ["Python", "Tkinter", "PyPDF2", "Pillow", "smtplib"],
     media: [
       {
         type: "image",
@@ -275,7 +281,7 @@ function safeGetLang() {
 function safeSetLang(lang) {
   try {
     localStorage.setItem("fv_lang", lang);
-  } catch {}
+  } catch { }
 }
 
 let currentLang = safeGetLang();
@@ -295,6 +301,25 @@ const lightboxClose = document.getElementById("lightboxClose");
 /* ===========================================================
    RENDER PILLS & CAROUSEL CARDS
 =========================================================== */
+function updateTabMarquees() {
+  pillsContainer.querySelectorAll(".pill-label").forEach((box) => {
+    const primary = box.querySelector(".pill-text:not(.pill-dup)");
+    if (!primary) return;
+
+    // Reset before measuring exact single-copy text width
+    box.classList.remove("is-overflow");
+    box.style.removeProperty("--marquee-duration");
+
+    const textWidth = Math.ceil(primary.scrollWidth);
+    if (textWidth - box.clientWidth > 2) {
+      // Constant calm LED speed (~24 px/s) across a single copy + 28px seamless loop gap
+      const duration = Math.max(4.5, (textWidth + 28) / 24);
+      box.classList.add("is-overflow");
+      box.style.setProperty("--marquee-duration", `${duration.toFixed(2)}s`);
+    }
+  });
+}
+
 function renderPills() {
   pillsContainer.innerHTML = "";
   PROJECTS.forEach((proj, idx) => {
@@ -303,10 +328,18 @@ function renderPills() {
     btn.className = `pill-btn${idx === activeSlide ? " active" : ""}`;
     btn.setAttribute("role", "tab");
     btn.setAttribute("aria-selected", idx === activeSlide ? "true" : "false");
-    btn.innerHTML = `<span class="pill-num">0${idx + 1}</span><span>${proj.shortLabel}</span>`;
+    btn.title = proj.title;
+    btn.innerHTML =
+      `<span class="pill-num">0${idx + 1}</span>` +
+      `<span class="pill-label">` +
+      `<span class="pill-label-inner" translate="no">` +
+      `<span class="pill-text">${proj.title}</span>` +
+      `<span class="pill-text pill-dup" aria-hidden="true">${proj.title}</span>` +
+      `</span></span>`;
     btn.addEventListener("click", () => goToSlide(idx));
     pillsContainer.appendChild(btn);
   });
+  requestAnimationFrame(updateTabMarquees);
 }
 
 function buildInnerMediaArrows(projIdx) {
@@ -333,17 +366,18 @@ function buildMediaStageHTML(projIdx, mediaIdx) {
   const dict = I18N[currentLang];
   const navArrows = buildInnerMediaArrows(projIdx);
 
+  const fitClass = item.fitCover ? " fit-cover" : "";
+
   if (item.type === "video") {
     const isCurrentlyActive = projIdx === activeSlide;
     return `
       ${navArrows}
-      <video muted loop playsinline preload="${isCurrentlyActive ? "metadata" : "none"}" poster="${item.poster}" data-loaded="${isCurrentlyActive ? "1" : "0"}">
+      <video class="${fitClass.trim()}" muted loop playsinline preload="${isCurrentlyActive ? "metadata" : "none"}" poster="${item.poster}" data-loaded="${isCurrentlyActive ? "1" : "0"}">
         <source ${isCurrentlyActive ? `src="${item.mp4}"` : `data-src="${item.mp4}"`} type="video/mp4" />
       </video>
     `;
   }
 
-  const fitClass = item.fitCover ? " fit-cover" : "";
   return `
     ${navArrows}
     <button type="button" class="expand-btn" title="${dict.expandLabel}" aria-label="${dict.expandLabel}" data-src="${item.src}" data-caption="${proj.title}">
@@ -472,7 +506,7 @@ function syncVideos() {
         vid.load();
       }
       vid.muted = true;
-      vid.play().catch(() => {});
+      vid.play().catch(() => { });
     } else if (!vid.paused) {
       vid.pause();
     }
@@ -717,8 +751,19 @@ function preloadScreenshotsIdle() {
   }
 }
 
+let resizeMarqueeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeMarqueeTimer);
+  resizeMarqueeTimer = setTimeout(updateTabMarquees, 150);
+});
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(updateTabMarquees);
+}
+
 window.addEventListener("load", () => {
   hidePreloader();
+  updateTabMarquees();
   preloadScreenshotsIdle();
 });
 setTimeout(hidePreloader, 1400);
