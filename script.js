@@ -5,8 +5,8 @@ const I18N = {
   en: {
     loading: "LOADING...",
     intro:
-      "Hello! I'm Felipe — a software developer focused on building fast, interactive web applications and practical automation tools.<br><br>" +
-      "From 3D browser experiences to clean, responsive interfaces, I write code that turns ideas into reliable software.",
+      "<p>Hello! I'm Felipe — a software developer focused on building fast, interactive web applications and practical automation tools.</p>" +
+      "<p>From 3D browser experiences to clean, responsive interfaces, I write code that turns ideas into reliable software.</p>",
     skillInfra: "IT Infrastructure",
     showcaseEyebrow: "SELECTED WORK & LIVE DEMOS",
     showcaseTitle: "Projects in Action",
@@ -34,8 +34,8 @@ const I18N = {
   pt: {
     loading: "CARREGANDO...",
     intro:
-      "Olá! Eu sou o Felipe — desenvolvedor de software focado em criar aplicações web rápidas, interativas e ferramentas práticas de automação.<br><br>" +
-      "De experiências 3D no navegador a interfaces limpas e responsivas, transformo ideias em software confiável.",
+      "<p>Olá! Eu sou o Felipe — desenvolvedor de software focado em criar aplicações web rápidas, interativas e ferramentas práticas de automação.</p>" +
+      "<p>De experiências 3D no navegador a interfaces limpas e responsivas, transformo ideias em software confiável.</p>",
     skillInfra: "Infraestrutura de TI",
     showcaseEyebrow: "PROJETOS EM DESTAQUE & DEMOS AO VIVO",
     showcaseTitle: "Projetos em Ação",
@@ -81,10 +81,11 @@ const PROJECTS = [
         type: "video",
         mp4: "projectsMedia/roc-and-load-video.mp4",
         poster: "projectsMedia/roc-and-load-print1.webp",
+        fitCover: "center",
       },
-      { type: "image", src: "projectsMedia/roc-and-load-print1.webp", alt: "Roc and Load title screen" },
-      { type: "image", src: "projectsMedia/roc-and-load-print2.webp", alt: "Roc and Load 3D office gameplay" },
-      { type: "image", src: "projectsMedia/roc-and-load-print3.webp", alt: "Roc and Load combat action" },
+      { type: "image", src: "projectsMedia/roc-and-load-print1.webp", alt: "Roc and Load title screen", fitCover: "center" },
+      { type: "image", src: "projectsMedia/roc-and-load-print2.webp", alt: "Roc and Load 3D office gameplay", fitCover: "center" },
+      { type: "image", src: "projectsMedia/roc-and-load-print3.webp", alt: "Roc and Load combat action", fitCover: "center" },
     ],
     links: [
       {
@@ -149,6 +150,7 @@ const PROJECTS = [
         type: "video",
         mp4: "projectsMedia/cybercity-video.mp4",
         poster: "projectsMedia/cybercity-print1.webp",
+        fitCover: "center",
       },
       { type: "image", src: "projectsMedia/cybercity-print1.webp", alt: "Cybercity Signal Hunt start screen" },
       { type: "image", src: "projectsMedia/cybercity-print2.webp", alt: "Cybercity Signal Hunt target lock" },
@@ -214,11 +216,14 @@ const PROJECTS = [
     },
     tags: ["HTML", "CSS", "Flexbox", "CSS Grid"],
     media: [
-      { type: "image", src: "projectsMedia/jornada-viagens-print1.webp", alt: "Jornada Viagens hero header" },
-      { type: "image", src: "projectsMedia/jornada-viagens-print2.webp", alt: "Jornada Viagens popular offers" },
-      { type: "image", src: "projectsMedia/jornada-viagens-print3.webp", alt: "Jornada Viagens categories and destinations" },
-      { type: "image", src: "projectsMedia/jornada-viagens-print4.webp", alt: "Jornada Viagens payment highlights" },
-      { type: "image", src: "projectsMedia/jornada-viagens-print5.webp", alt: "Jornada Viagens customer testimonials" },
+      {
+        type: "video",
+        mp4: "projectsMedia/jornada-video.mp4",
+        poster: "projectsMedia/jornada-print1.webp",
+      },
+      { type: "image", src: "projectsMedia/jornada-print1.webp", alt: "Jornada Viagens hero header" },
+      { type: "image", src: "projectsMedia/jornada-print2.webp", alt: "Jornada Viagens destinations showcase" },
+      { type: "image", src: "projectsMedia/jornada-print3.webp", alt: "Jornada Viagens travel sections" },
     ],
     links: [
       {
@@ -366,7 +371,12 @@ function buildMediaStageHTML(projIdx, mediaIdx) {
   const dict = I18N[currentLang];
   const navArrows = buildInnerMediaArrows(projIdx);
 
-  const fitClass = item.fitCover ? " fit-cover" : "";
+  const fitClass =
+    item.fitCover === "center"
+      ? " fit-cover fit-center"
+      : item.fitCover
+        ? " fit-cover"
+        : "";
 
   if (item.type === "video") {
     const isCurrentlyActive = projIdx === activeSlide;
